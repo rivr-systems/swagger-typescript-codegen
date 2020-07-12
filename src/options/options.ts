@@ -1,6 +1,7 @@
 import * as Mustache from "mustache";
 import { isObject, isString } from "lodash";
 import { Swagger } from "../swagger/Swagger";
+import { Method } from "../view-data/method";
 
 export interface Template {
   readonly class: string;
@@ -18,6 +19,7 @@ interface Options {
   readonly mustache: typeof Mustache;
   readonly beautify: ((source: string) => string) | boolean;
   readonly beautifyOptions: JsBeautifyOptions;
+  readonly methodTransform?: (method: Method) => Method;
 }
 
 interface SwaggerOption {

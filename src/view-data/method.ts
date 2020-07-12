@@ -64,8 +64,9 @@ export function makeMethod(
     successfulResponseType,
     successfulResponseTypeIsRef
   ] = getSuccessfulResponseType(op, swagger);
+  const { methodTransform } = opts;
 
-  return {
+  const data: Method = {
     path,
     pathFormatString: path.replace(/{/g, "${parameters."),
     className: opts.className,
@@ -89,6 +90,8 @@ export function makeMethod(
     responseTypes: renderResponseTypes(defaultResponseTypeName, op, swagger),
     isLatestVersion: false
   };
+
+  return methodTransform ? methodTransform(data) : data;
 }
 
 const charactersToBeReplacedWithUnderscore = /\.|\-|\{|\}/g;
