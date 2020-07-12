@@ -12,7 +12,7 @@
     "test:watch": "jest --watch",
     "prepublishOnly": "npm run build",
     "prettier": "prettier --write \"src/**/*.ts\"",
-    "install": "npm run build"
+    "prepare": "npm run build"
   },
   "bin": {
     "swagger2ts": "bin/swagger2ts.js"
