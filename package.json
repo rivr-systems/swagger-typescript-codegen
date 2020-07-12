@@ -34,7 +34,7 @@
   },
   "license": "Apache-2.0",
   "homepage": "https://github.com/mtennoe/swagger-typescript-codegen",
-  "devDependencies": {
+  "dependencies": {
     "@types/commander": "^2.12.2",
     "@types/jest": "^23.3.10",
     "@types/js-beautify": "^1.8.0",
